@@ -1,16 +1,16 @@
 package com.streamCodes;
 
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.List;
 
 public class EmployeeTest {
     public static void main(String[] args) {
 
-        EmployeeData.readAll()
-                .map(Employee::getEmpEmail).forEach(System.out::println);
+        System.out.println("Print all the emails");
 
-        System.out.println("---------------------------------------------");
         EmployeeData.readAll().map(Employee::getEmpEmail).forEach(System.out::println);
+        System.out.println("---------------------------------------------");
 
         System.out.println("-----------------------------------------------");
 
