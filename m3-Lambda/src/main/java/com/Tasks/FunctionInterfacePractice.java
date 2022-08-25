@@ -7,6 +7,8 @@ import java.util.function.Function;
 public class FunctionInterfacePractice {
 
     public static void main(String[] args) {
+
+
         Function<int[], List<Integer>> arrayToList= list-> {
             List<Integer>list1= new ArrayList<>();
             for (int each : list) {

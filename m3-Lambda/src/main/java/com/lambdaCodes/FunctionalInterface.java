@@ -1,5 +1,8 @@
 package com.lambdaCodes;
 
+import com.lambdaCodes.AppleTask.Apple;
+import com.lambdaCodes.AppleTask.ApplePredicate;
+
 import java.util.function.*;
 
 public class FunctionalInterface {
@@ -8,70 +11,38 @@ public class FunctionalInterface {
         ApplePredicate ap = new ApplePredicate() {
             @Override
             public boolean test(Apple apple) {
-                return apple.getWeight()>200;
+                return apple.getWeight() > 200;
             }
         };
 
         System.out.println("************PREDICATE***************");
-        Predicate<Integer> lesserThan =  i -> i<18;
-        System.out.println(lesserThan.test(20));
+        Predicate<Double> biggerThan = a -> a > 20;
+        System.out.println(biggerThan.test(34.0));
 
         System.out.println("************CONSUMER***************");
-        Consumer<Integer> display = i -> System.out.println(i);
-        display.accept(10);
+
+        Consumer<Integer> number = i -> System.out.println(i);
+        number.accept(12);
 
         System.out.println("************BI CONSUMER***************");
-        BiConsumer<Integer,Integer> addTwo = (x,y) -> System.out.println(x+y);
-        addTwo.accept(1,2);
-
+        BiConsumer<Integer, Integer> add= (x,y)-> System.out.println(x+y);
+        add.accept(10,20);
         System.out.println("************FUNCTION***************");
-        Function<String,String> fun = s -> "Hello " + s;
-        System.out.println(fun.apply("Cydeo"));
+        Function<String, String> fun = s -> "Hello " + s;
+        System.out.println(fun.apply("Love you"));
 
         System.out.println("************BI FUNCTION***************");
-        BiFunction<Integer,Integer,Integer> func = (x1,x2) -> x1+x2;
-        System.out.println(func.apply(2,3));
+        BiFunction<Integer, Integer, Integer> result= (x,y)->x+y;
+        result.apply(12, 12);
 
 
         System.out.println("************SUPPLIER***************");
-        Supplier<Double> randomValue = () -> Math.random();
-        System.out.println(randomValue.get());
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        Supplier<Double>pi= ()->Math.PI;
+        pi.get();
+        System.out.println(pi.get());
+        Supplier<Integer> random= ()->Math.min(12, 13);
+        random.get();
+        System.out.println(random.get());
 
 
 

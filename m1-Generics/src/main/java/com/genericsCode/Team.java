@@ -3,11 +3,12 @@ package com.genericsCode;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Team<T extends Player> {  //Any class you can pass to Team. Should accept only Player class and subclasses
+public class Team<T extends Player> {
+    //Any class you can pass to Team. Should accept only Player class and subclasses
 
     private String name;
 
-    private List<T> members = new ArrayList<T>();
+    private List<T> members = new ArrayList<>();
 
     public Team(String name) {
         this.name = name;
