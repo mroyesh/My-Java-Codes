@@ -15,6 +15,10 @@ public class Test {
 
         Generics.printEach(number);
         Generics.printEach(scores);
+        Generics.printEach(names);
+        Generics.printEach(shapes);
+
+        System.out.println("----------------------------");
 
 
         ArrayList<Integer> score= new ArrayList<>(Arrays.asList(40,50,60,70));

@@ -16,6 +16,8 @@ public class UserTest {
         //Print all elements in the list
         printName(users,user -> true);
 
+        System.out.println("--------------------------------");
+
         //Print all people that last name starts with E
         printName(users,user -> user.getLastname().startsWith("E"));
     }
