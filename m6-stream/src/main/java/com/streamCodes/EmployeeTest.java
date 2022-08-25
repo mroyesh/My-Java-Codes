@@ -11,10 +11,22 @@ public class EmployeeTest {
 
         EmployeeData.readAll().map(Employee::getEmpEmail).forEach(System.out::println);
         System.out.println("---------------------------------------------");
+        EmployeeData.readAll().map(Employee::getEmpPhoneNumber)
+                .forEach(System.out::println);
+
+
+        EmployeeData.readAll()
+                .flatMap(employee -> employee.getEmpPhoneNumber().stream())   // first option
+                .forEach(System.out::println);
+
+        EmployeeData.readAll().map(Employee::getEmpPhoneNumber)
+                        .flatMap(List::stream).forEach(System.out::println);   // second option
+
 
         System.out.println("-----------------------------------------------");
 
         EmployeeData.readAll().map(Employee::getEmpPhoneNumber).forEach(System.out::println);
+
 
         System.out.println("------------------------------------------------");
 
